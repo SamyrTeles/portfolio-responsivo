@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfólio</title>
+</head>
+
+<body>
+
+    <div class="particulas"></div>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="contato" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <div>
+            <img src="./img/IMG_20240723_171834.jpg" alt="Foto de Samyr Teles" class="foto-perfil">
+            <h1>Samyr Teles</h1>
+            <p class="cabecalho-sub-titulo">Desenvolvedor Front End</p>
+        </div>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Sou um programador front-end, graduando em Sistemas de Informação e entre outros
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <img src="./img/projeto1.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Loja de carros</h3>
+                    <p class="paragrafo-projetos">Loja virtual moderna</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/projeto2.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Pagina de viagens</h3>
+                    <p class="paragrafo-projetos">Pagina com roteiros de viagens</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/projeto3.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Turismo</h3>
+                    <p class="paragrafo-projetos">Pagina da Turismo criada para ajudar mais as pessoas a saberem mais sobre determinado local</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+        </form>
+    </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5579999208882'
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+            console.log(url)
+
+            window.open(url, '_blank')
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>
