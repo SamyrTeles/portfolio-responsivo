@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <title>Portfólio</title>
     <style>
-        /* Caso queira garantir rolagem suave sem depender apenas do CSS externo */
         html {
             scroll-behavior: smooth;
         }
@@ -26,6 +25,9 @@
             <li><a href="#contatos" class="menu-link">Contato</a></li>
         </ul>
     </nav>
+
+    <!-- Botão do menu responsivo -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
     <main id="inicio" class="cabecalho">
         <div>
@@ -92,19 +94,18 @@
     <script>
         function enviarWhats(event) {
             event.preventDefault();
-
             const nome = document.getElementById('nome').value;
             const mensagem = document.getElementById('mensagem').value;
             const telefone = '5579999208882';
-
             const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
             const msgFormatada = encodeURIComponent(texto);
-
             const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
-
-            console.log(url);
-
             window.open(url, '_blank');
+        }
+
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('ativo');
         }
     </script>
 
