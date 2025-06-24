@@ -6,25 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Portfólio</title>
+    <style>
+        /* Caso queira garantir rolagem suave sem depender apenas do CSS externo */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body>
 
     <div class="particulas"></div>
+
     <nav class="navegacao">
         <ul class="menu">
-            <li>
-                <a href="#inicio" class="menu-link">Início</a>
-            </li>
-            <li>
-                <a href="#sobre" class="menu-link">Sobre</a>
-            </li>
-            <li>
-                <a href="projetos" class="menu-link">Projetos</a>
-            </li>
-            <li>
-                <a href="contato" class="menu-link">Contato</a>
-            </li>
+            <li><a href="#inicio" class="menu-link">Início</a></li>
+            <li><a href="#sobre" class="menu-link">Sobre</a></li>
+            <li><a href="#projetos" class="menu-link">Projetos</a></li>
+            <li><a href="#contatos" class="menu-link">Contato</a></li>
         </ul>
     </nav>
 
@@ -57,18 +56,18 @@
             </div>
 
             <div class="projetos-card">
-                <img src="./img/projeto2.png" alt="Projeto 1" class="projetos-imagem">
+                <img src="./img/projeto2.png" alt="Projeto 2" class="projetos-imagem">
                 <div class="caixa-textos-projeto">
-                    <h3 class="info-projetos">Pagina de viagens</h3>
-                    <p class="paragrafo-projetos">Pagina com roteiros de viagens</p>
+                    <h3 class="info-projetos">Página de viagens</h3>
+                    <p class="paragrafo-projetos">Página com roteiros de viagens</p>
                 </div>
             </div>
 
             <div class="projetos-card">
-                <img src="./img/projeto3.png" alt="Projeto 1" class="projetos-imagem">
+                <img src="./img/projeto3.png" alt="Projeto 3" class="projetos-imagem">
                 <div class="caixa-textos-projeto">
                     <h3 class="info-projetos">Turismo</h3>
-                    <p class="paragrafo-projetos">Pagina da Turismo criada para ajudar mais as pessoas a saberem mais sobre determinado local</p>
+                    <p class="paragrafo-projetos">Página de turismo criada para ajudar mais pessoas a saberem mais sobre determinado local</p>
                 </div>
             </div>
         </div>
@@ -92,26 +91,22 @@
 
     <script>
         function enviarWhats(event) {
-            event.preventDefault()
+            event.preventDefault();
 
             const nome = document.getElementById('nome').value;
             const mensagem = document.getElementById('mensagem').value;
-            const telefone = '5579999208882'
+            const telefone = '5579999208882';
 
-            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
-            const msgFormatada = encodeURIComponent(texto)
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
+            const msgFormatada = encodeURIComponent(texto);
 
-            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
 
-            console.log(url)
+            console.log(url);
 
-            window.open(url, '_blank')
+            window.open(url, '_blank');
         }
-
-
-
     </script>
-
 
 </body>
 
